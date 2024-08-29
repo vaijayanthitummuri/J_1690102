@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex 5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 200vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .link {
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: rgb(0, 128, 0);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+	<a href="#bottom" class="link" id="topLink">Top of the page</a>
+    <div style="flex-grow: 1;"></div>
+    <a href="#top" class="link" id="bottomLink">Bottom of the page</a>
+
+    <script>
+        document.getElementById('topLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('bottomLink').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('bottomLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('topLink').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
